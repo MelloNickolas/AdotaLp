@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/animal")
+@RequestMapping("/api/animal")
 @CrossOrigin("*")
 public class AnimalResource {
 
@@ -24,11 +24,12 @@ public class AnimalResource {
     private AnimalRepository animalrepository;
 
     @GetMapping()
-    public Page<AnimalDTO> pesquisar(AnimalFilter animalfilter, Pageable pageable){
-        return animalrepository.Filtrar(animalfilter, pageable);
-    }
-    @GetMapping("/todos")
     public List<Animal> listaranimal(){
         return animalrepository.findAll();
+    }
+
+    @GetMapping("/dto")
+    public Page<AnimalDTO> pesquisar(AnimalFilter animalfilter, Pageable pageable){
+        return animalrepository.Filtrar(animalfilter, pageable);
     }
 }
