@@ -93,11 +93,10 @@ public class AnimalRepositoryImpl implements  AnimalRepositoryQuery{
         if(animalfilter.getIdade() != null){
             predicates.add(builder.equal(root.get("idade"), animalfilter.getIdade()));
         }
-
-        if(animalfilter.getPorte() != null){
-            predicates.add(builder.equal(root.get("porte"),animalfilter.getPorte()));
+        if (!StringUtils.isEmpty(animalfilter.getPorte())){
+            predicates.add(builder.like(builder.lower(root.get("porte")),
+                    "%" + animalfilter.getPorte().toLowerCase() + "%"));
         }
-
         if (!StringUtils.isEmpty(animalfilter.getDescricao())){
             predicates.add(builder.like(builder.lower(root.get("raca").get("descricao")),
                     "%" + animalfilter.getDescricao().toLowerCase() + "%"));

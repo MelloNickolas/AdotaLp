@@ -17,7 +17,7 @@ public class Animal {
     private String nomeanimal;
     private String sexo;
     private Integer idade;
-    private Integer porte;
+    private String porte;
 
     public Integer getId() {
         return id;
@@ -51,11 +51,11 @@ public class Animal {
         this.idade = idade;
     }
 
-    public Integer getPorte() {
+    public String getPorte() {
         return porte;
     }
 
-    public void setPorte(Integer porte) {
+    public void setPorte(String porte) {
         this.porte = porte;
     }
 

@@ -5,7 +5,7 @@ public class AnimalFilter {
     private String nomeanimal;
     private String sexo;
     private Integer idade;
-    private Integer porte;
+    private String porte;
     //FK's
     private String descricao;
     private String nomecidade;
@@ -34,11 +34,11 @@ public class AnimalFilter {
         this.idade = idade;
     }
 
-    public Integer getPorte() {
+    public String getPorte() {
         return porte;
     }
 
-    public void setPorte(Integer porte) {
+    public void setPorte(String porte) {
         this.porte = porte;
     }
 
