@@ -32,4 +32,5 @@ public class AnimalResource {
     public Page<AnimalDTO> pesquisar(AnimalFilter animalfilter, Pageable pageable){
         return animalrepository.Filtrar(animalfilter, pageable);
     }
+    
 }
